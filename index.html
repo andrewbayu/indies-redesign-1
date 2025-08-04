@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIES - Partner Wujudkan Impian Studi Luar Negeri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #222E64;
+            --brand-yellow: #FACC15; /* yellow-400 */
+            --brand-light-blue: #F0F5FF;
+            --text-dark: #111827;
+            --text-light: #4B5563;
+        }
+        body {
+            font-family: 'Figtree', sans-serif;
+            color: var(--text-dark);
+            background-color: #F9FAFB; /* gray-50 */
+        }
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .bg-brand-yellow { background-color: var(--brand-yellow); }
+        .bg-brand-light-blue { background-color: var(--brand-light-blue); }
+        .border-brand-blue { border-color: var(--brand-blue); }
+
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(34, 46, 100, 0.3);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .blob {
+            position: absolute;
+            opacity: 0.5;
+            z-index: -1;
+            filter: blur(80px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6">
+            <nav class="flex justify-between items-center py-4">
+                <a href="#" class="text-3xl font-black text-brand-blue">INDIES</a>
+                <div class="hidden lg:flex items-center space-x-8 font-semibold">
+                    <a href="#journey" class="text-gray-600 hover:text-brand-blue transition-colors">Proses Kami</a>
+                    <a href="#why-us" class="text-gray-600 hover:text-brand-blue transition-colors">Keunggulan</a>
+                    <a href="#success" class="text-gray-600 hover:text-brand-blue transition-colors">Alumni</a>
+                    <a href="#resources" class="text-gray-600 hover:text-brand-blue transition-colors">Panduan</a>
+                </div>
+                <a href="#consultation" class="hidden lg:inline-block bg-brand-blue text-white px-6 py-2.5 rounded-full font-bold cta-button">Konsultasi Gratis</a>
+                <div class="lg:hidden">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-200">
+            <a href="#journey" class="block py-3 px-6 text-base hover:bg-gray-100">Proses Kami</a>
+            <a href="#why-us" class="block py-3 px-6 text-base hover:bg-gray-100">Keunggulan</a>
+            <a href="#success" class="block py-3 px-6 text-base hover:bg-gray-100">Alumni</a>
+            <a href="#resources" class="block py-3 px-6 text-base hover:bg-gray-100">Panduan</a>
+            <div class="p-4">
+                 <a href="#consultation" class="block w-full text-center bg-brand-blue text-white px-6 py-3 rounded-full font-bold">Konsultasi Gratis</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="relative pt-24 pb-20 overflow-hidden">
+            <div class="blob w-96 h-96 bg-yellow-200 -top-20 -left-20"></div>
+            <div class="blob w-96 h-96 bg-blue-200 -bottom-20 -right-20"></div>
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-4xl mx-auto text-brand-blue">Wujudkan Impian Studi Luar Negeri-mu.</h1>
+                <p class="mt-6 text-lg md:text-xl text-text-light max-w-3xl mx-auto">Didampingi mentor berpengalaman, dari mapping jurusan sampai sukses adaptasi di negara tujuan. Aman, transparan, dan personal.</p>
+                <a href="#consultation" class="mt-8 inline-block bg-brand-blue text-white px-10 py-4 rounded-full text-xl font-bold cta-button">Mulai Konsultasi Gratis</a>
+                
+                <!-- Trust Signals / Metrics -->
+                <div class="mt-16 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <p class="text-4xl font-extrabold text-brand-blue">15+</p>
+                        <p class="text-text-light font-semibold">Tahun Pengalaman</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-extrabold text-brand-blue">1000+</p>
+                        <p class="text-text-light font-semibold">Alumni Sukses</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-extrabold text-brand-blue">95%</p>
+                        <p class="text-text-light font-semibold">Tingkat Keberhasilan Visa</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-extrabold text-brand-blue">20+</p>
+                        <p class="text-text-light font-semibold">Negara Tujuan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Why INDIES? (USP Section) -->
+        <section id="why-us" class="py-20 bg-brand-light-blue">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Partner Terbaik untuk Perjalanan Studimu</h2>
+                    <p class="mt-4 text-lg text-text-light max-w-2xl mx-auto">Kami fokus pada apa yang terpenting: masa depanmu.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-blue">Rekomendasi Independen</h3>
+                        <p class="mt-2 text-text-light">Saran kami murni berdasarkan minat & potensimu, bukan karena afiliasi universitas tertentu.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-blue">Mentoring Personal 1-on-1</h3>
+                        <p class="mt-2 text-text-light">Kamu akan didampingi satu mentor khusus dari awal hingga akhir proses.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-blue">Proses yang Transparan</h3>
+                        <p class="mt-2 text-text-light">Tidak ada biaya tersembunyi. Semua jelas di awal, dengan laporan progres berkala.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. Journey Timeline Section -->
+        <section id="journey" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Proses Kami yang Terstruktur</h2>
+                    <p class="mt-4 text-lg text-text-light max-w-2xl mx-auto">Setiap langkah dirancang untuk kesuksesanmu.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-yellow">
+                        <div class="w-20 h-20 rounded-full bg-brand-light-blue text-brand-blue flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.083-3.083A6.986 6.986 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.75 9.25a.75.75 0 01.75-.75h9.5a.75.75 0 010 1.5h-9.5a.75.75 0 01-.75-.75zm0 2.5a.75.75 0 01.75-.75h5.5a.75.75 0 010 1.5h-5.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <p class="font-bold text-gray-400 text-sm mb-2">LANGKAH 1</p>
+                        <h3 class="text-xl font-bold text-brand-blue">Konsultasi & Profiling</h3>
+                        <p class="mt-2 text-text-light">Sesi mendalam untuk memahami aspirasi, nilai akademik, dan tujuan karirmu.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-yellow">
+                        <div class="w-20 h-20 rounded-full bg-brand-light-blue text-brand-blue flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3.5a1 1 0 00.002 1.84L9 9.583V14.5a1 1 0 00.553.894l2 1A1 1 0 0012 16.5v-7.382l4.998-2.499a1 1 0 00-.002-1.84l-7-3.5zM10 5.142L13.94 7 10 8.858 6.06 7 10 5.142zM11 14.53v-4.212l-1-1v5.212l-2-1V9.583L5.002 7.5 10 9.917 14.998 7.5 11 9.583V14.53z" />
+                            </svg>
+                        </div>
+                        <p class="font-bold text-gray-400 text-sm mb-2">LANGKAH 2</p>
+                        <h3 class="text-xl font-bold text-brand-blue">Rekomendasi Jurusan</h3>
+                        <p class="mt-2 text-text-light">Kami menyajikan 3-5 pilihan terbaik yang sudah dikurasi khusus untuk profil unikmu.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-yellow">
+                        <div class="w-20 h-20 rounded-full bg-brand-light-blue text-brand-blue flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <p class="font-bold text-gray-400 text-sm mb-2">LANGKAH 3</p>
+                        <h3 class="text-xl font-bold text-brand-blue">Dokumen & Aplikasi</h3>
+                        <p class="mt-2 text-text-light">Bimbingan intensif untuk esai, surat rekomendasi, dan pengisian formulir aplikasi.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-yellow">
+                        <div class="w-20 h-20 rounded-full bg-brand-light-blue text-brand-blue flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.428a1 1 0 00.475 0l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                            </svg>
+                        </div>
+                        <p class="font-bold text-gray-400 text-sm mb-2">LANGKAH 4</p>
+                        <h3 class="text-xl font-bold text-brand-blue">Visa & Keberangkatan</h3>
+                        <p class="mt-2 text-text-light">Memastikan semua dokumen visa lengkap dan memberikan pembekalan sebelum kamu terbang.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Success Stories -->
+        <section id="success" class="py-20 bg-brand-light-blue">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Apa Kata Alumni Kami?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm">
+                        <p class="text-text-light">"Tim INDIES benar-benar seperti teman sendiri. Mereka sabar banget menjawab semua pertanyaanku yang banyak. Proses jadi terasa ringan dan aku diterima di kampus impian!"</p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://i.pravatar.cc/50?img=7" alt="Alumni" class="w-12 h-12 rounded-full object-cover">
+                            <div class="ml-4">
+                                <p class="font-bold">Anya D.</p>
+                                <p class="text-sm text-text-light">University of Melbourne</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-white p-8 rounded-2xl shadow-sm">
+                        <p class="text-text-light">"Awalnya aku kira apply visa itu ribet banget. Tapi berkat bimbingan INDIES yang detail, semua dokumenku lengkap dan visa approved tanpa kendala. Sangat profesional."</p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://i.pravatar.cc/50?img=8" alt="Alumni" class="w-12 h-12 rounded-full object-cover">
+                            <div class="ml-4">
+                                <p class="font-bold">Bimo P.</p>
+                                <p class="text-sm text-text-light">UBC, Canada</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-white p-8 rounded-2xl shadow-sm">
+                        <p class="text-text-light">"Yang paling aku suka, INDIES kasih beberapa opsi dan pro-kontranya, jadi aku bisa memutuskan yang terbaik buat diriku sendiri. Nggak ada paksaan sama sekali."</p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://i.pravatar.cc/50?img=5" alt="Alumni" class="w-12 h-12 rounded-full object-cover">
+                            <div class="ml-4">
+                                <p class="font-bold">Carissa N.</p>
+                                <p class="text-sm text-text-light">King's College London</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. Interactive Tool -->
+        <section class="py-20">
+             <div class="container mx-auto px-6">
+                <div class="bg-white rounded-2xl shadow-lg p-10 md:p-16 flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl font-bold text-brand-blue">Negara Mana yang Paling Cocok Untukmu?</h2>
+                        <p class="mt-4 text-lg text-text-light">Masih bingung menentukan tujuan? Coba kuis singkat kami untuk mendapatkan rekomendasi negara berdasarkan kepribadian dan minatmu!</p>
+                        <a href="#" class="mt-6 inline-block bg-brand-yellow text-brand-blue px-8 py-3 rounded-full text-lg font-bold cta-button">Ikuti Kuis (2 Menit)</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/500x300/F0F5FF/222E64?text=Quiz+Visual" alt="Quiz Visual" class="rounded-xl w-full">
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- 6. Resources & FAQ -->
+        <section id="resources" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Panduan & Jawaban</h2>
+                    <p class="mt-4 text-lg text-text-light max-w-2xl mx-auto">Semua yang perlu kamu tahu sebelum memulai.</p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-4">
+                        <div class="accordion-item bg-white rounded-xl border border-gray-200">
+                            <button class="accordion-header flex justify-between items-center w-full p-5 font-bold text-left text-lg">
+                                Apakah layanan INDIES berbayar?
+                                <svg class="w-6 h-6 transform transition-transform text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-5 pt-0 text-text-light">Sesi konsultasi awal untuk profiling dan pemetaan minat 100% gratis. Untuk layanan pendampingan aplikasi dan visa, kami menerapkan biaya layanan yang transparan dan akan dijelaskan sepenuhnya di awal.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white rounded-xl border border-gray-200">
+                            <button class="accordion-header flex justify-between items-center w-full p-5 font-bold text-left text-lg">
+                                Berapa lama proses dari konsultasi sampai berangkat?
+                                <svg class="w-6 h-6 transform transition-transform text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-5 pt-0 text-text-light">Rata-rata proses memakan waktu 6-12 bulan, tergantung negara tujuan dan jadwal intake universitas. Kami menyarankan untuk memulai proses setidaknya satu tahun sebelum rencana keberangkatan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 7. Final CTA -->
+        <section id="consultation" class="bg-white">
+            <div class="container mx-auto px-6 py-20">
+                <div class="bg-brand-blue text-white rounded-2xl p-10 md:p-16 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold">Siap Mengambil Langkah Pertama?</h2>
+                    <p class="mt-4 text-lg text-blue-200 max-w-2xl mx-auto">Jadwalkan sesi konsultasi gratis tanpa komitmen dengan mentor ahli kami. Mari diskusikan impianmu!</p>
+                    <a href="#" class="mt-8 inline-block bg-brand-yellow text-brand-blue px-10 py-4 rounded-full text-xl font-bold cta-button">Jadwalkan Sesi Gratis Sekarang</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 8. Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                 <h4 class="font-bold text-xl text-brand-yellow">Jangan Sampai Ada yang Terlewat!</h4>
+                 <p class="mt-2 text-gray-300 max-w-lg mx-auto">Download checklist persiapan studi ke luar negeri terlengkap kami. Gratis!</p>
+                 <form class="mt-4 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Masukkan email kamu" class="w-full px-4 py-3 rounded-lg text-gray-800 border-transparent focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                    <button type="submit" class="bg-brand-yellow text-brand-blue px-6 py-3 rounded-lg font-bold whitespace-nowrap">Download</button>
+                </form>
+            </div>
+             <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">&copy; 2025 INDIES. All rights reserved.</p>
+                <div class="flex mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-white">TikTok</a>
+                    <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA (WhatsApp) -->
+    <a href="#" class="fixed bottom-5 right-5 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl cta-button z-40">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.296-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Accordion FAQ
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            header.addEventListener('click', () => {
+                const content = item.querySelector('.accordion-content');
+                const icon = header.querySelector('svg');
+                
+                const isOpen = content.style.maxHeight;
+                
+                // Close all items
+                accordionItems.forEach(otherItem => {
+                    otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                    otherItem.querySelector('.accordion-header svg').classList.remove('rotate-180');
+                });
+
+                // Open the clicked item if it was closed
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
