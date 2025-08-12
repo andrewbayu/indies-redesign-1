@@ -13,6 +13,7 @@
             --brand-blue: #222E64;
             --brand-yellow: #FACC15; /* yellow-400 */
             --brand-light-blue: #F0F5FF;
+            --brand-red: #EF4444; /* red-500 */
             --text-dark: #111827;
             --text-light: #4B5563;
         }
@@ -34,16 +35,16 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px -5px rgba(34, 46, 100, 0.3);
         }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-        }
         .blob {
             position: absolute;
             opacity: 0.5;
             z-index: -1;
             filter: blur(80px);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -53,14 +54,13 @@
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
         <div class="container mx-auto px-4 sm:px-6">
             <nav class="flex justify-between items-center py-4">
-                <a href="#" class="text-3xl font-black text-brand-blue">INDIES</a>
+                <a href="#" id="home-link" class="text-3xl font-black text-brand-blue cursor-pointer">INDIES</a>
                 <div class="hidden lg:flex items-center space-x-8 font-semibold">
-                    <a href="#journey" class="text-gray-600 hover:text-brand-blue transition-colors">Proses Kami</a>
-                    <a href="#why-us" class="text-gray-600 hover:text-brand-blue transition-colors">Keunggulan</a>
-                    <a href="#success" class="text-gray-600 hover:text-brand-blue transition-colors">Alumni</a>
-                    <a href="#resources" class="text-gray-600 hover:text-brand-blue transition-colors">Panduan</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-brand-blue transition-colors">Tentang Kami</a>
+                    <a href="#why-us" class="nav-link text-gray-600 hover:text-brand-blue transition-colors">Keunggulan</a>
+                    <a href="#success" class="nav-link text-gray-600 hover:text-brand-blue transition-colors">Alumni</a>
                 </div>
-                <a href="#consultation" class="hidden lg:inline-block bg-brand-blue text-white px-6 py-2.5 rounded-full font-bold cta-button">Konsultasi Gratis</a>
+                <a href="#consultation" class="nav-link hidden lg:inline-block bg-brand-blue text-white px-6 py-2.5 rounded-full font-bold cta-button">Konsultasi Gratis</a>
                 <div class="lg:hidden">
                     <button id="menu-btn" class="text-gray-800 focus:outline-none">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -70,17 +70,16 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-200">
-            <a href="#journey" class="block py-3 px-6 text-base hover:bg-gray-100">Proses Kami</a>
-            <a href="#why-us" class="block py-3 px-6 text-base hover:bg-gray-100">Keunggulan</a>
-            <a href="#success" class="block py-3 px-6 text-base hover:bg-gray-100">Alumni</a>
-            <a href="#resources" class="block py-3 px-6 text-base hover:bg-gray-100">Panduan</a>
+            <a href="#about" class="nav-link block py-3 px-6 text-base hover:bg-gray-100">Tentang Kami</a>
+            <a href="#why-us" class="nav-link block py-3 px-6 text-base hover:bg-gray-100">Keunggulan</a>
+            <a href="#success" class="nav-link block py-3 px-6 text-base hover:bg-gray-100">Alumni</a>
             <div class="p-4">
-                 <a href="#consultation" class="block w-full text-center bg-brand-blue text-white px-6 py-3 rounded-full font-bold">Konsultasi Gratis</a>
+                 <a href="#consultation" class="nav-link block w-full text-center bg-brand-blue text-white px-6 py-3 rounded-full font-bold">Konsultasi Gratis</a>
             </div>
         </div>
     </header>
 
-    <main>
+    <div id="main-content">
         <!-- 1. Hero Section -->
         <section class="relative pt-24 pb-20 overflow-hidden">
             <div class="blob w-96 h-96 bg-yellow-200 -top-20 -left-20"></div>
@@ -112,94 +111,135 @@
             </div>
         </section>
 
-        <!-- 2. Why INDIES? (USP Section) -->
-        <section id="why-us" class="py-20 bg-brand-light-blue">
+        <!-- 2. About the INDIES Section -->
+        <section id="about" class="py-24 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Partner Terbaik untuk Perjalanan Studimu</h2>
-                    <p class="mt-4 text-lg text-text-light max-w-2xl mx-auto">Kami fokus pada apa yang terpenting: masa depanmu.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-xl font-bold text-brand-blue">Rekomendasi Independen</h3>
-                        <p class="mt-2 text-text-light">Saran kami murni berdasarkan minat & potensimu, bukan karena afiliasi universitas tertentu.</p>
+                <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" class="rounded-2xl shadow-2xl w-full">
                     </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-xl font-bold text-brand-blue">Mentoring Personal 1-on-1</h3>
-                        <p class="mt-2 text-text-light">Kamu akan didampingi satu mentor khusus dari awal hingga akhir proses.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-xl font-bold text-brand-blue">Proses yang Transparan</h3>
-                        <p class="mt-2 text-text-light">Tidak ada biaya tersembunyi. Semua jelas di awal, dengan laporan progres berkala.</p>
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Lebih dari Sekadar Agen, Kami Adalah Partnermu</h2>
+                        <p class="mt-6 text-text-light leading-relaxed">Selama lebih dari satu dekade, INDIES telah berkomitmen untuk menjadi mitra terpercaya bagi para siswa Indonesia. Kami tidak hanya menawarkan layanan, kami membangun jembatan menuju masa depan cerah Anda melalui pendidikan internasional.</p>
+                         <p class="mt-4 text-text-light leading-relaxed">Tim kami yang terdiri dari alumni universitas ternama dunia siap memberikanmu pandangan otentik dan bimbingan yang relevan, memastikan setiap keputusan yang kamu ambil adalah yang terbaik.</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- 3. Journey Timeline Section -->
-        <section id="journey" class="py-20">
+        <!-- How We Can Help You Section -->
+        <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Proses Kami yang Terstruktur</h2>
-                    <p class="mt-4 text-lg text-text-light max-w-2xl mx-auto">Setiap langkah dirancang untuk kesuksesanmu.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">How We Can Help You</h2>
+                    <p class="mt-4 text-lg text-text-light max-w-2xl mx-auto">INDIES supports your entire study abroad journey with S.E.N.D:</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Card 1 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-yellow">
-                        <div class="w-20 h-20 rounded-full bg-brand-light-blue text-brand-blue flex items-center justify-center mx-auto mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.083-3.083A6.986 6.986 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.75 9.25a.75.75 0 01.75-.75h9.5a.75.75 0 010 1.5h-9.5a.75.75 0 01-.75-.75zm0 2.5a.75.75 0 01.75-.75h5.5a.75.75 0 010 1.5h-5.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-gray-400 text-sm mb-2">LANGKAH 1</p>
-                        <h3 class="text-xl font-bold text-brand-blue">Konsultasi & Profiling</h3>
-                        <p class="mt-2 text-text-light">Sesi mendalam untuk memahami aspirasi, nilai akademik, dan tujuan karirmu.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-brand-light-blue p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-brand-blue">Select</h3>
+                        <p class="mt-2 text-text-light">You will choose the right university and major based on your goals, strengths, and potential.</p>
                     </div>
-                    <!-- Card 2 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-yellow">
-                        <div class="w-20 h-20 rounded-full bg-brand-light-blue text-brand-blue flex items-center justify-center mx-auto mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3.5a1 1 0 00.002 1.84L9 9.583V14.5a1 1 0 00.553.894l2 1A1 1 0 0012 16.5v-7.382l4.998-2.499a1 1 0 00-.002-1.84l-7-3.5zM10 5.142L13.94 7 10 8.858 6.06 7 10 5.142zM11 14.53v-4.212l-1-1v5.212l-2-1V9.583L5.002 7.5 10 9.917 14.998 7.5 11 9.583V14.53z" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-gray-400 text-sm mb-2">LANGKAH 2</p>
-                        <h3 class="text-xl font-bold text-brand-blue">Rekomendasi Jurusan</h3>
-                        <p class="mt-2 text-text-light">Kami menyajikan 3-5 pilihan terbaik yang sudah dikurasi khusus untuk profil unikmu.</p>
+                    <div class="bg-brand-light-blue p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-brand-blue">Empower</h3>
+                        <p class="mt-2 text-text-light">You will get support throughout the enrollment process, with expert guidance every step of the way.</p>
                     </div>
-                    <!-- Card 3 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-yellow">
-                        <div class="w-20 h-20 rounded-full bg-brand-light-blue text-brand-blue flex items-center justify-center mx-auto mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-gray-400 text-sm mb-2">LANGKAH 3</p>
-                        <h3 class="text-xl font-bold text-brand-blue">Dokumen & Aplikasi</h3>
-                        <p class="mt-2 text-text-light">Bimbingan intensif untuk esai, surat rekomendasi, dan pengisian formulir aplikasi.</p>
+                    <div class="bg-brand-light-blue p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-brand-blue">Navigate</h3>
+                        <p class="mt-2 text-text-light">You will prepare for real-life challenges, from classroom culture to personal growth, so you’re ready to thrive abroad.</p>
                     </div>
-                    <!-- Card 4 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-yellow">
-                        <div class="w-20 h-20 rounded-full bg-brand-light-blue text-brand-blue flex items-center justify-center mx-auto mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.428a1 1 0 00.475 0l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                            </svg>
-                        </div>
-                        <p class="font-bold text-gray-400 text-sm mb-2">LANGKAH 4</p>
-                        <h3 class="text-xl font-bold text-brand-blue">Visa & Keberangkatan</h3>
-                        <p class="mt-2 text-text-light">Memastikan semua dokumen visa lengkap dan memberikan pembekalan sebelum kamu terbang.</p>
+                    <div class="bg-brand-light-blue p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-brand-blue">Depart</h3>
+                        <p class="mt-2 text-text-light">You will receive assistance with visa preparation, accommodation tips, and local insights, ensuring you feel confident and supported as you begin your studies abroad.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Success Stories -->
+        <!-- Our Services Section -->
+        <section class="py-20 bg-brand-light-blue">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Our Services</h2>
+                </div>
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Service Card 1 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-md flex flex-col">
+                            <div class="w-16 h-16 bg-brand-light-blue rounded-xl flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg></div>
+                            <h3 class="text-xl font-bold text-brand-blue">Study Abroad Consultation</h3>
+                            <p class="mt-2 text-text-light flex-grow">Get expert guidance to choose the university, major, and country that align with your goals and potential.</p>
+                            <a href="#" class="service-link inline-block mt-4 font-semibold text-brand-blue">Learn More &rarr;</a>
+                        </div>
+                        <!-- Service Card 2 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-md flex flex-col">
+                            <div class="w-16 h-16 bg-brand-light-blue rounded-xl flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
+                            <h3 class="text-xl font-bold text-brand-blue">University Enrollment Support</h3>
+                            <p class="mt-2 text-text-light flex-grow">We help you prepare and submit all the necessary documents, with a clear timeline and strategy.</p>
+                            <a href="#" class="service-link inline-block mt-4 font-semibold text-brand-blue">Learn More &rarr;</a>
+                        </div>
+                        <!-- Service Card 3 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-md flex flex-col">
+                            <div class="w-16 h-16 bg-brand-light-blue rounded-xl flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg></div>
+                            <h3 class="text-xl font-bold text-brand-blue">Scholarship Application Mentoring</h3>
+                            <p class="mt-2 text-text-light flex-grow">Get 1-on-1 guidance with our scholarship mentors who are awardees from top global universities.</p>
+                            <a href="#" class="service-link inline-block mt-4 font-semibold text-brand-blue">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Service Card 4 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-md flex flex-col">
+                           <div class="w-16 h-16 bg-brand-light-blue rounded-xl flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg></div>
+                            <h3 class="text-xl font-bold text-brand-blue">UniPrep Program</h3>
+                            <p class="mt-2 text-text-light flex-grow">This program prepares you for cultural adaptation, academic success, and personal growth before your departure.</p>
+                            <a href="#" class="service-link inline-block mt-4 font-semibold text-brand-blue">Learn More &rarr;</a>
+                        </div>
+                        <!-- Service Card 5 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-md flex flex-col">
+                            <div class="w-16 h-16 bg-brand-light-blue rounded-xl flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
+                            <h3 class="text-xl font-bold text-brand-blue">IELTS Preparation</h3>
+                            <p class="mt-2 text-text-light flex-grow">Achieve your target score with guaranteed results, unlimited mock tests, and expert-led strategies.</p>
+                            <a href="#" class="service-link inline-block mt-4 font-semibold text-brand-blue">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- "Our Values" (USP Section) -->
+        <section id="why-us" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Our Values</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-brand-light-blue p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 text-center">
+                        <h3 class="text-xl font-bold text-brand-blue">Independent</h3>
+                        <p class="mt-2 text-text-light">Rekomendasi murni berdasarkan minat & potensi kamu, tanpa tekanan sponsor.</p>
+                    </div>
+                    <div class="bg-brand-light-blue p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 text-center">
+                        <h3 class="text-xl font-bold text-brand-blue">Personalized</h3>
+                        <p class="mt-2 text-text-light">1-on-1 mentoring dari awal sampai keberangkatan.</p>
+                    </div>
+                    <div class="bg-brand-light-blue p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 text-center">
+                        <h3 class="text-xl font-bold text-brand-blue">Comprehensive</h3>
+                        <p class="mt-2 text-text-light">Bimbingan dokumen, visa, sampai adaptasi kuliah.</p>
+                    </div>
+                    <div class="bg-brand-light-blue p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 text-center">
+                        <h3 class="text-xl font-bold text-brand-blue">Transparan</h3>
+                        <p class="mt-2 text-text-light">No hidden fee, progress report setiap saat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
         <section id="success" class="py-20 bg-brand-light-blue">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Apa Kata Alumni Kami?</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-sm">
+                    <div class="bg-white p-8 rounded-2xl">
                         <p class="text-text-light">"Tim INDIES benar-benar seperti teman sendiri. Mereka sabar banget menjawab semua pertanyaanku yang banyak. Proses jadi terasa ringan dan aku diterima di kampus impian!"</p>
                         <div class="mt-6 flex items-center">
                             <img src="https://i.pravatar.cc/50?img=7" alt="Alumni" class="w-12 h-12 rounded-full object-cover">
@@ -209,7 +249,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="bg-white p-8 rounded-2xl shadow-sm">
+                     <div class="bg-white p-8 rounded-2xl">
                         <p class="text-text-light">"Awalnya aku kira apply visa itu ribet banget. Tapi berkat bimbingan INDIES yang detail, semua dokumenku lengkap dan visa approved tanpa kendala. Sangat profesional."</p>
                         <div class="mt-6 flex items-center">
                             <img src="https://i.pravatar.cc/50?img=8" alt="Alumni" class="w-12 h-12 rounded-full object-cover">
@@ -219,7 +259,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="bg-white p-8 rounded-2xl shadow-sm">
+                     <div class="bg-white p-8 rounded-2xl">
                         <p class="text-text-light">"Yang paling aku suka, INDIES kasih beberapa opsi dan pro-kontranya, jadi aku bisa memutuskan yang terbaik buat diriku sendiri. Nggak ada paksaan sama sekali."</p>
                         <div class="mt-6 flex items-center">
                             <img src="https://i.pravatar.cc/50?img=5" alt="Alumni" class="w-12 h-12 rounded-full object-cover">
@@ -232,39 +272,60 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 5. Interactive Tool -->
-        <section class="py-20">
+
+        <!-- Lead Magnet (Starter Pack) Section -->
+        <section class="py-20 bg-white">
              <div class="container mx-auto px-6">
-                <div class="bg-white rounded-2xl shadow-lg p-10 md:p-16 flex flex-col md:flex-row items-center gap-8">
-                    <div class="md:w-1/2 text-center md:text-left">
-                        <h2 class="text-3xl font-bold text-brand-blue">Negara Mana yang Paling Cocok Untukmu?</h2>
-                        <p class="mt-4 text-lg text-text-light">Masih bingung menentukan tujuan? Coba kuis singkat kami untuk mendapatkan rekomendasi negara berdasarkan kepribadian dan minatmu!</p>
-                        <a href="#" class="mt-6 inline-block bg-brand-yellow text-brand-blue px-8 py-3 rounded-full text-lg font-bold cta-button">Ikuti Kuis (2 Menit)</a>
+                <div class="bg-white rounded-2xl shadow-lg p-10 md:p-16 flex flex-col lg:flex-row items-center gap-8 border">
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <span class="inline-block bg-red-100 text-red-600 font-semibold py-1 px-3 rounded-full text-sm mb-4">STUDY ABROAD STARTER PACK</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-blue leading-tight">BINGUNG MAU KULIAH DI LUAR NEGERI?</h2>
+                        <div class="w-24 h-1 bg-brand-blue mt-4 mb-6 mx-auto lg:mx-0"></div>
+                        <p class="text-lg text-text-light">Download GRATIS Study Abroad Starter Pack dari INDIES!</p>
+                        <p class="mt-4 text-text-light">Mulai langkah pertamamu dengan lebih percaya diri. Dapatkan panduan, checklist, dan tips persiapan kuliah ke luar negeri, semuanya dirangkum dalam satu Starter Pack praktis!</p>
+                        <a href="#" class="mt-8 inline-block bg-red-500 text-white px-8 py-3 rounded-lg text-lg font-bold cta-button hover:bg-red-600">Download Sekarang</a>
                     </div>
-                    <div class="md:w-1/2">
-                        <img src="https://placehold.co/500x300/F0F5FF/222E64?text=Quiz+Visual" alt="Quiz Visual" class="rounded-xl w-full">
+                    <div class="lg:w-1/2">
+                        <img src="https://placehold.co/600x400/F0F5FF/222E64?text=Starter+Pack+Visual" alt="Study Abroad Starter Pack" class="rounded-xl w-full">
                     </div>
                 </div>
              </div>
         </section>
 
-        <!-- 6. Resources & FAQ -->
-        <section id="resources" class="py-20 bg-gray-50">
+        <!-- FAQs Section -->
+        <section id="faq" class="py-20 bg-brand-light-blue">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Panduan & Jawaban</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">FAQs</h2>
                     <p class="mt-4 text-lg text-text-light max-w-2xl mx-auto">Semua yang perlu kamu tahu sebelum memulai.</p>
                 </div>
                 <div class="max-w-3xl mx-auto">
                     <div class="space-y-4">
                         <div class="accordion-item bg-white rounded-xl border border-gray-200">
                             <button class="accordion-header flex justify-between items-center w-full p-5 font-bold text-left text-lg">
-                                Apakah layanan INDIES berbayar?
+                                Apakah konsultasi benar-benar gratis?
                                 <svg class="w-6 h-6 transform transition-transform text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                             </button>
                             <div class="accordion-content">
-                                <p class="p-5 pt-0 text-text-light">Sesi konsultasi awal untuk profiling dan pemetaan minat 100% gratis. Untuk layanan pendampingan aplikasi dan visa, kami menerapkan biaya layanan yang transparan dan akan dijelaskan sepenuhnya di awal.</p>
+                                <p class="p-5 pt-0 text-text-light">Betul, sesi konsultasi awal bersama kami 100% gratis dan tanpa komitmen. Tujuannya adalah agar kami bisa memahami kebutuhanmu dan kamu bisa mengenal cara kerja kami.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white rounded-xl border border-gray-200">
+                            <button class="accordion-header flex justify-between items-center w-full p-5 font-bold text-left text-lg">
+                                Negara mana saja yang dilayani INDIES?
+                                <svg class="w-6 h-6 transform transition-transform text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-5 pt-0 text-text-light">Kami memiliki jaringan luas di negara-negara favorit seperti Australia, Inggris (UK), Amerika Serikat, Kanada, Selandia Baru, Belanda, Singapura, dan Malaysia.</p>
+                            </div>
+                        </div>
+                         <div class="accordion-item bg-white rounded-xl border border-gray-200">
+                            <button class="accordion-header flex justify-between items-center w-full p-5 font-bold text-left text-lg">
+                                Apakah INDIES membantu mencari beasiswa?
+                                <svg class="w-6 h-6 transform transition-transform text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-5 pt-0 text-text-light">Ya, kami akan secara aktif memberikan informasi beasiswa yang tersedia dari universitas partner kami dan membantu dalam proses aplikasinya.</p>
                             </div>
                         </div>
                         <div class="accordion-item bg-white rounded-xl border border-gray-200">
@@ -276,41 +337,153 @@
                                 <p class="p-5 pt-0 text-text-light">Rata-rata proses memakan waktu 6-12 bulan, tergantung negara tujuan dan jadwal intake universitas. Kami menyarankan untuk memulai proses setidaknya satu tahun sebelum rencana keberangkatan.</p>
                             </div>
                         </div>
+                        <div class="accordion-item bg-white rounded-xl border border-gray-200">
+                            <button class="accordion-header flex justify-between items-center w-full p-5 font-bold text-left text-lg">
+                                Apa yang membedakan INDIES dari agen lain?
+                                <svg class="w-6 h-6 transform transition-transform text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-5 pt-0 text-text-light">Fokus kami adalah pada bimbingan personal dan rekomendasi yang independen. Kami memprioritaskan kecocokan antara siswa dan universitas, bukan sekadar mengejar kuota. Tim kami yang merupakan alumni juga memberikan nilai tambah yang tidak dimiliki semua agen.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- 7. Final CTA -->
+        <!-- Final CTA -->
         <section id="consultation" class="bg-white">
             <div class="container mx-auto px-6 py-20">
                 <div class="bg-brand-blue text-white rounded-2xl p-10 md:p-16 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold">Siap Mengambil Langkah Pertama?</h2>
                     <p class="mt-4 text-lg text-blue-200 max-w-2xl mx-auto">Jadwalkan sesi konsultasi gratis tanpa komitmen dengan mentor ahli kami. Mari diskusikan impianmu!</p>
-                    <a href="#" class="mt-8 inline-block bg-brand-yellow text-brand-blue px-10 py-4 rounded-full text-xl font-bold cta-button">Jadwalkan Sesi Gratis Sekarang</a>
+                    <a href="#" class="mt-8 inline-block bg-brand-yellow text-brand-blue px-10 py-4 rounded-full text-xl font-bold cta-button hover:shadow-yellow-300/50">Jadwalkan Sesi Gratis Sekarang</a>
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 
-    <!-- 8. Footer -->
+    <!-- NEW: Booking Page -->
+    <div id="booking-page" class="hidden">
+        <div class="container mx-auto px-6 py-24">
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+                <!-- Step Indicator -->
+                <div class="mb-12">
+                    <ol class="flex items-center w-full">
+                        <li id="step-1-indicator" class="flex w-full items-center text-brand-blue after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block">
+                            <span class="flex items-center justify-center w-10 h-10 bg-brand-blue rounded-full lg:h-12 lg:w-12 shrink-0">
+                                <span class="text-white font-bold">1</span>
+                            </span>
+                        </li>
+                        <li id="step-2-indicator" class="flex items-center w-full">
+                             <span class="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full lg:h-12 lg:w-12 shrink-0">
+                                <span class="text-gray-500 font-bold">2</span>
+                            </span>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Stage 1: Personal Data -->
+                <div id="stage1">
+                    <h2 class="text-3xl font-bold text-brand-blue mb-2">Jadwalkan Konsultasi Gratis</h2>
+                    <p class="text-text-light mb-8">Langkah 1 dari 2: Informasi Pribadi</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700">Nama Lengkap</label>
+                            <input type="text" id="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700">Alamat Email</label>
+                            <input type="email" id="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold text-gray-700">Nomor WhatsApp</label>
+                            <input type="tel" id="phone" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue">
+                        </div>
+                        <button id="next-btn" class="w-full bg-brand-blue text-white py-3 px-4 rounded-md font-bold hover:bg-opacity-90 transition">Lanjut ke Peminatan &rarr;</button>
+                    </div>
+                </div>
+                <!-- Stage 2: Interests -->
+                <div id="stage2" class="hidden">
+                    <h2 class="text-3xl font-bold text-brand-blue mb-2">Jadwalkan Konsultasi Gratis</h2>
+                    <p class="text-text-light mb-8">Langkah 2 dari 2: Peminatan Studi</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="service" class="block text-sm font-semibold text-gray-700">Layanan yang diminati</label>
+                            <select id="service" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue">
+                                <option>Study Abroad Consultation</option>
+                                <option>University Enrollment Support</option>
+                                <option>Scholarship Application Mentoring</option>
+                                <option>UniPrep Program</option>
+                                <option>IELTS Preparation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="destination" class="block text-sm font-semibold text-gray-700">Negara Tujuan (jika sudah ada)</label>
+                            <input type="text" id="destination" placeholder="Contoh: Australia, UK" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue">
+                        </div>
+                        <div>
+                            <label for="major" class="block text-sm font-semibold text-gray-700">Jurusan yang diminati (jika sudah ada)</label>
+                            <input type="text" id="major" placeholder="Contoh: Business, Engineering" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue">
+                        </div>
+                        <div class="flex gap-4">
+                            <button id="back-btn" class="w-1/3 bg-gray-200 text-gray-800 py-3 px-4 rounded-md font-bold hover:bg-gray-300 transition">&larr; Kembali</button>
+                            <button id="submit-btn" class="w-2/3 bg-brand-blue text-white py-3 px-4 rounded-md font-bold hover:bg-opacity-90 transition">Kirim Permintaan</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Success Message -->
+                 <div id="success-message" class="hidden text-center">
+                    <h2 class="text-3xl font-bold text-brand-blue mb-4">Terima Kasih!</h2>
+                    <p class="text-text-light mb-6">Permintaan konsultasi Anda telah kami terima. Tim kami akan segera menghubungi Anda melalui WhatsApp.</p>
+                    <a href="#" id="back-to-home" class="inline-block bg-brand-blue text-white py-3 px-6 rounded-md font-bold hover:bg-opacity-90 transition">Kembali ke Beranda</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white">
         <div class="container mx-auto px-6 py-16">
-            <div class="text-center mb-12">
-                 <h4 class="font-bold text-xl text-brand-yellow">Jangan Sampai Ada yang Terlewat!</h4>
-                 <p class="mt-2 text-gray-300 max-w-lg mx-auto">Download checklist persiapan studi ke luar negeri terlengkap kami. Gratis!</p>
-                 <form class="mt-4 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-                    <input type="email" placeholder="Masukkan email kamu" class="w-full px-4 py-3 rounded-lg text-gray-800 border-transparent focus:ring-2 focus:ring-yellow-400 focus:outline-none">
-                    <button type="submit" class="bg-brand-yellow text-brand-blue px-6 py-3 rounded-lg font-bold whitespace-nowrap">Download</button>
-                </form>
-            </div>
-             <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm text-gray-400">&copy; 2025 INDIES. All rights reserved.</p>
-                <div class="flex mt-4 md:mt-0 space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
-                    <a href="#" class="text-gray-400 hover:text-white">TikTok</a>
-                    <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-3xl font-black">INDIES</h3>
+                    <p class="mt-4 text-gray-400">Independent International Education Solutions</p>
+                    <p class="mt-4 text-gray-400">info@indies.co.id</p>
+                    <a href="#" class="mt-2 inline-block bg-white text-gray-800 font-semibold py-2 px-4 rounded-lg">WhatsApp Only</a>
                 </div>
+                <div>
+                    <h4 class="font-bold text-lg text-gray-300">Our Services</h4>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Admission Counselling</a></li>
+                        <li><a href="#" class="hover:text-white">Student Accomodation</a></li>
+                        <li><a href="#" class="hover:text-white">Student Visa Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg text-gray-300">Study Destinations</h4>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Australia</a></li>
+                        <li><a href="#" class="hover:text-white">Canada</a></li>
+                        <li><a href="#" class="hover:text-white">New Zealand</a></li>
+                        <li><a href="#" class="hover:text-white">UK</a></li>
+                        <li><a href="#" class="hover:text-white">USA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg text-gray-300">Our Centers</h4>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Pacific Place</a></li>
+                        <li><a href="#" class="hover:text-white">Kota Kasablanka</a></li>
+                        <li><a href="#" class="hover:text-white">Gandaria City</a></li>
+                        <li><a href="#" class="hover:text-white">Bekasi</a></li>
+                        <li><a href="#" class="hover:text-white">BSD</a></li>
+                        <li><a href="#" class="hover:text-white">...dan lainnya</a></li>
+                    </ul>
+                </div>
+            </div>
+             <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 INDIES. All rights reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Use</a></p>
             </div>
         </div>
     </footer>
@@ -321,34 +494,116 @@
     </a>
 
     <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        document.addEventListener('DOMContentLoaded', () => {
+            // Page switching logic
+            const mainContent = document.getElementById('main-content');
+            const bookingPage = document.getElementById('booking-page');
+            const serviceLinks = document.querySelectorAll('.service-link');
+            const homeLink = document.getElementById('home-link');
+            const backToHomeBtn = document.getElementById('back-to-home');
 
-        // Accordion FAQ
-        const accordionItems = document.querySelectorAll('.accordion-item');
-        accordionItems.forEach(item => {
-            const header = item.querySelector('.accordion-header');
-            header.addEventListener('click', () => {
-                const content = item.querySelector('.accordion-content');
-                const icon = header.querySelector('svg');
-                
-                const isOpen = content.style.maxHeight;
-                
-                // Close all items
-                accordionItems.forEach(otherItem => {
-                    otherItem.querySelector('.accordion-content').style.maxHeight = null;
-                    otherItem.querySelector('.accordion-header svg').classList.remove('rotate-180');
+            const showBookingPage = () => {
+                mainContent.classList.add('hidden');
+                bookingPage.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            };
+
+            const showMainContent = () => {
+                mainContent.classList.remove('hidden');
+                bookingPage.classList.add('hidden');
+            };
+
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showBookingPage();
                 });
+            });
 
-                // Open the clicked item if it was closed
-                if (!isOpen) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    icon.classList.add('rotate-180');
-                }
+            homeLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showMainContent();
+            });
+            backToHomeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showMainContent();
+            });
+
+            // Multi-stage form logic
+            const stage1 = document.getElementById('stage1');
+            const stage2 = document.getElementById('stage2');
+            const successMessage = document.getElementById('success-message');
+            const nextBtn = document.getElementById('next-btn');
+            const backBtn = document.getElementById('back-btn');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            // Step Indicator elements
+            const step1Indicator = document.getElementById('step-1-indicator');
+            const step2Indicator = document.getElementById('step-2-indicator');
+
+            nextBtn.addEventListener('click', () => {
+                stage1.classList.add('hidden');
+                stage2.classList.remove('hidden');
+                // Update indicator
+                step1Indicator.querySelector('span').classList.remove('bg-brand-blue');
+                step1Indicator.querySelector('span').classList.add('bg-green-500');
+                step1Indicator.querySelector('span').innerHTML = `<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>`;
+                step1Indicator.classList.remove('after:border-gray-200');
+                step1Indicator.classList.add('after:border-brand-blue');
+                step2Indicator.querySelector('span').classList.remove('bg-gray-200', 'text-gray-500');
+                step2Indicator.querySelector('span').classList.add('bg-brand-blue', 'text-white');
+            });
+
+            backBtn.addEventListener('click', () => {
+                stage2.classList.add('hidden');
+                stage1.classList.remove('hidden');
+                // Update indicator
+                step1Indicator.querySelector('span').classList.add('bg-brand-blue');
+                step1Indicator.querySelector('span').classList.remove('bg-green-500');
+                step1Indicator.querySelector('span').innerHTML = '1';
+                step1Indicator.classList.add('after:border-gray-200');
+                step1Indicator.classList.remove('after:border-brand-blue');
+                step2Indicator.querySelector('span').classList.add('bg-gray-200', 'text-gray-500');
+                step2Indicator.querySelector('span').classList.remove('bg-brand-blue', 'text-white');
+            });
+
+            submitBtn.addEventListener('click', () => {
+                stage2.classList.add('hidden');
+                document.querySelector('#booking-page .mb-12').classList.add('hidden'); // hide indicator
+                successMessage.classList.remove('hidden');
+            });
+
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Accordion FAQ
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                header.addEventListener('click', () => {
+                    const content = item.querySelector('.accordion-content');
+                    const icon = header.querySelector('svg');
+                    const isOpen = content.style.maxHeight;
+                    
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                            otherItem.querySelector('.accordion-header svg').classList.remove('rotate-180');
+                        }
+                    });
+
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.classList.add('rotate-180');
+                    } else {
+                        content.style.maxHeight = null;
+                        icon.classList.remove('rotate-180');
+                    }
+                });
             });
         });
     </script>
